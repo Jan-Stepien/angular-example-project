@@ -1,0 +1,26 @@
+.black-themed
+{
+  background: black;
+  color: white;
+}
+#homePageHeader
+{
+  height: 100vh;
+}
+#homePageHeader2
+{
+  height: 50vh;
+}
+#homePageHeader3
+{
+  height: 25vh;
+}
+
+.blockText{
+  margin: 1rem;
+}
+
+@media only screen and (max-width: 30em)
+{
+  .blockText span { display: block }
+}

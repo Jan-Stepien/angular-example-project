@@ -1,0 +1,10 @@
+.tile-text{
+  font-size: 80%;
+}
+.tile{
+  transition: opacity .5s ease;
+}
+.tile:hover{
+  opacity: 0.4;
+  cursor: pointer;
+}

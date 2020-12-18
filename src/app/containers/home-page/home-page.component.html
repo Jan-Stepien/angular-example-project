@@ -1,1 +1,32 @@
-<app-counter [clickCount]="clickCounter$ | async" (increment)="incrementClickCounter()" (reset)="resetClickCounter()"></app-counter>
+<!-- <app-counter [clickCount]="clickCounter$ | async" (increment)="incrementClickCounter()" (reset)="resetClickCounter()"></app-counter> -->
+<div id="homePageHeader" class="black-themed d-flex flex-column align-items-center justify-content-center ">
+  <h1 class="d-flex flex-wrap">Welcome</h1>
+  <p class="blockText">
+    <span>This is the place</span>
+    <span> where i can show you</span>
+    <span> what i can do in Angular</span>
+  </p>
+</div>
+<div id="homePageHeader2" class="d-flex flex-column align-items-center justify-content-center">
+  <p class="blockText">
+    <span>It's not gonna be</span>
+    <span> the most beautiful website</span>
+    <span> you entered, as </span>
+    <span> im not a graphic designer</span>
+  </p>
+  <p>but...</p>
+</div>
+<div id="homePageHeader3" class="black-themed d-flex flex-column align-items-center justify-content-center">
+  <p class="blockText">
+    <span>I will try to keep your attention</span>
+    <span> for more than few seconds</span>
+    <span> to show my skills</span>
+  </p>
+</div>
+<div id="homePageHeader4" class="d-flex flex-column align-items-center justify-content-center my-2">
+  <h5>So what you want to see first?</h5>
+  <div class="d-flex flex-row flex-wrap m-1">
+    <app-tile *ngFor="let tile of tiles; let i = index" class="d-flex"
+    [id]="i" [text]="tile" [style]="i % 2 === 0 ? tileStyles.blackTile : tileStyles.whiteTile" (clicked)="tileClicked($event)"></app-tile>
+  </div>
+</div>
