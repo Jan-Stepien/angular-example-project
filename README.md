@@ -6,5 +6,5 @@ Started in SAP, transitioned to APS.NET MVC 5 project, migrated to Angular...
 
 To be continued... 
 
-follow details on https://jan-stepien.github.io/hello-world/i-just-call-to-say-i-love-you
+follow details on https://jan-stepien.github.io/hello-world/
 
