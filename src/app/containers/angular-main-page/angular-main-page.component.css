@@ -1,0 +1,13 @@
+.angularHomeHeader{
+  height: 15vh;
+}
+.black-themed
+{
+  background: black;
+  color: white;
+}
+@media only screen and (max-width: 30em)
+{
+  .blockText span { display: block }
+}
+

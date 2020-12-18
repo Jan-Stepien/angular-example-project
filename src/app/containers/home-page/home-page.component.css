@@ -1,3 +1,5 @@
+
+
 .black-themed
 {
   background: black;
@@ -5,11 +7,11 @@
 }
 #homePageHeader
 {
-  height: 100vh;
+  height: 50vh;
 }
 #homePageHeader2
 {
-  height: 50vh;
+  height: 25vh;
 }
 #homePageHeader3
 {

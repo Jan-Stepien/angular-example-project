@@ -1,9 +1,10 @@
 const width = '30vw'
 const minWidth = '100px'
-const maxWidth = '100px';
+const maxWidth = '200px';
 const height = '30vw'
 const minHeight = '100px'
-const maxHeight = '100px';
+const maxHeight = '200px';
+const borderRadius = '15px';
 export const tileStyles = {
   whiteTile: {
     'width': width,
@@ -16,6 +17,7 @@ export const tileStyles = {
     'background-color':'white',
     'border-color':'black',
     'border':'solid',
+    'border-radius': borderRadius,
     'text-align':'center'
   },
   blackTile: {
@@ -27,6 +29,7 @@ export const tileStyles = {
     'max-height': maxHeight,
     'color':'white',
     'background-color':'black',
+    'border-radius': borderRadius,
     'text-align':'center'
   }
 }

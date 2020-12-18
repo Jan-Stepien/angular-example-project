@@ -1,1 +1,1 @@
-<p>ng-rx-example works!</p>
+<app-counter [clickCount]="clickCounter$ | async" (increment)="incrementClickCounter()" (reset)="resetClickCounter()"></app-counter>

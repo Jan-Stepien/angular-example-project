@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { Store } from '@ngrx/store';
 import { incrementClickCount, resetClickCount } from 'src/app/actions/click-counter.actions';
 import { ClickState } from 'src/app/app.state';
@@ -11,29 +13,29 @@ import { tileStyles } from 'src/app/components/tile/tile.config';
 })
 export class HomePageComponent implements OnInit {
 
-  clickCounter$ = this.store.select(state => state.click.clickCounter);
-
+  faArrowRight = faArrowRight;
   tileStyles = tileStyles;
   tiles = [
-    'NgRx implementation',
-    'GitHub',
-    'Boostrap used',
-    'Responsive design',
-];
+    {
+      label: "Angular",
+      redirectTo: 'angular'
+    },
+    {
+      label: "Flutter",
+      redirectTo: 'flutter'
+    }
+  ];
 
-  constructor(private store: Store<{click: ClickState}>) {
+  constructor(private router: Router) {
 
   }
   ngOnInit(): void {
 
   }
-  incrementClickCounter(){
-    this.store.dispatch(incrementClickCount());
+  redirect(index: number){
+    this.router.navigate([this.tiles[index].redirectTo]);
   }
-  resetClickCounter(){
-    this.store.dispatch(resetClickCount());
-  }
-  tileClicked(item: number){
-    console.log(item);
+  scrollTop(){
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 }

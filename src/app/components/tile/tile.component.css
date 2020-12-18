@@ -2,6 +2,7 @@
   font-size: 80%;
 }
 .tile{
+  font-weight: bold;
   transition: opacity .5s ease;
 }
 .tile:hover{

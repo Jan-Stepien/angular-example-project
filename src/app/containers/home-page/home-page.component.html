@@ -1,32 +1,36 @@
-<!-- <app-counter [clickCount]="clickCounter$ | async" (increment)="incrementClickCounter()" (reset)="resetClickCounter()"></app-counter> -->
 <div id="homePageHeader" class="black-themed d-flex flex-column align-items-center justify-content-center ">
   <h1 class="d-flex flex-wrap">Welcome</h1>
   <p class="blockText">
     <span>This is the place</span>
     <span> where i can show you</span>
-    <span> what i can do in Angular</span>
+    <span> what i can do</span>
   </p>
 </div>
-<div id="homePageHeader2" class="d-flex flex-column align-items-center justify-content-center">
-  <p class="blockText">
-    <span>It's not gonna be</span>
-    <span> the most beautiful website</span>
-    <span> you entered, as </span>
-    <span> im not a graphic designer</span>
-  </p>
-  <p>but...</p>
-</div>
-<div id="homePageHeader3" class="black-themed d-flex flex-column align-items-center justify-content-center">
-  <p class="blockText">
-    <span>I will try to keep your attention</span>
-    <span> for more than few seconds</span>
-    <span> to show my skills</span>
-  </p>
-</div>
-<div id="homePageHeader4" class="d-flex flex-column align-items-center justify-content-center my-2">
+<div id="homePageHeader4" class="d-flex flex-row align-items-center justify-content-center my-2">
+  <app-tile *ngFor="let tile of tiles; let i = index" class="d-flex m-1" [id]="i" [text]="tile.label" [style]="tileStyles.blackTile" (clicked)="redirect($event)"></app-tile>
+  <!-- <app-tile class="d-flex m-1" [id]="1" text="Flutter" [style]="tileStyles.blackTile" (clicked)="redirect($event)"></app-tile> -->
+<!-- <div id="homePageHeader4" class="d-flex flex-column align-items-center justify-content-center my-2">
   <h5>So what you want to see first?</h5>
-  <div class="d-flex flex-row flex-wrap m-1">
-    <app-tile *ngFor="let tile of tiles; let i = index" class="d-flex"
-    [id]="i" [text]="tile" [style]="i % 2 === 0 ? tileStyles.blackTile : tileStyles.whiteTile" (clicked)="tileClicked($event)"></app-tile>
+  <div class="d-flex flex-row flex-wrap m-1 justify-content-center">
+    <app-tile *ngFor="let tile of tiles; let i = index" class="d-flex m-1"
+    [id]="i" [text]="tile.label" [style]="i % 2 === 0 ? tileStyles.blackTile : tileStyles.whiteTile" (clicked)="tileClicked($event)"></app-tile>
   </div>
+</div> -->
+</div>
+<div id="homePageHeader2" class="black-themed d-flex flex-column align-items-center justify-content-center">
+  <p class="blockText">
+    <span>This application is written in Angualar</span>
+    <span> and hosted using GitHub Pages</span>
+</div>
+<div id="homePageHeader3" class=" d-flex flex-column align-items-center justify-content-center">
+  <p class="blockText">
+    <span>Feel free to explore,</span>
+    <span> I hope you will enjoy it</span>
+  </p>
+</div>
+<div id="homePageFooter" class="black-themed d-flex justify-content-left flex-column p-4">
+  <a [routerLink]="scrollTop()">Home</a>
+  <a *ngFor="let tile of tiles" routerLink="{{'/' + tile.redirectTo}}">
+    <fa-icon [icon]="faArrowRight" class="px-2"></fa-icon>{{tile.label}}
+  </a>
 </div>

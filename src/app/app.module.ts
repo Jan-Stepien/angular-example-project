@@ -10,6 +10,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TileComponent } from './components/tile/tile.component';
 import { NgRxExampleComponent } from './containers/ng-rx-example/ng-rx-example.component';
 import { PageNotFoundComponent } from './containers/page-not-found/page-not-found.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AngularMainPageComponent } from './containers/angular-main-page/angular-main-page.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +21,16 @@ import { PageNotFoundComponent } from './containers/page-not-found/page-not-foun
     CounterComponent,
     TileComponent,
     NgRxExampleComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    FooterComponent,
+    AngularMainPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({click: reducers.click}),
-    NgbModule
+    NgbModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
