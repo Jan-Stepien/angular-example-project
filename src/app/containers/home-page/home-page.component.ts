@@ -20,10 +20,11 @@ export class HomePageComponent implements OnInit {
       label: "Angular",
       redirectTo: 'angular'
     },
-    {
-      label: "Flutter",
-      redirectTo: 'flutter'
-    }
+    // TODO:
+    // {
+    //   label: "Flutter",
+    //   redirectTo: 'flutter'
+    // }
   ];
 
   constructor(private router: Router) {

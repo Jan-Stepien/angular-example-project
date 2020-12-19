@@ -11,7 +11,7 @@
   <h5>So what you want to see first?</h5>
   <div class="d-flex flex-row flex-wrap m-1 justify-content-center">
     <app-tile *ngFor="let tile of tiles; let i = index" class="d-flex m-1" [routerLink]="tile.redirectTo"
-    [id]="i" [text]="tile.label" [style]="i % 2 === 0 ? tileStyles.blackTile : tileStyles.whiteTile" ></app-tile>
+    [id]="i" [text]="tile.label" [style]="setTileStyle(i)" ></app-tile>
   </div>
 </div>
 <footer id="homePageFooter" class="black-themed d-flex justify-content-left flex-column p-4">

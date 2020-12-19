@@ -18,18 +18,19 @@ export class AngularMainPageComponent implements OnInit {
       label:'NgRx implementation',
       redirectTo: 'ngRx'
     },
-    {
-      label:'Boostrap used',
-      redirectTo: 'home'
-    },
-    {
-      label:'Responsive design',
-      redirectTo: 'home'
-    },
-    {
-      label:'GitHub',
-      redirectTo: 'home'
-    }
+    // TODO:
+    // {
+    //   label:'Boostrap used',
+    //   redirectTo: 'home'
+    // },
+    // {
+    //   label:'Responsive design',
+    //   redirectTo: 'home'
+    // },
+    // {
+    //   label:'GitHub',
+    //   redirectTo: 'home'
+    // }
 ];
   constructor(private router: Router) { }
 
@@ -39,5 +40,7 @@ export class AngularMainPageComponent implements OnInit {
   tileClicked(index: number){
     this.router.navigate([this.tiles[index].redirectTo]);
   }
-
+  setTileStyle(index: number){
+    return index % 2 === 0 ? tileStyles.blackTile : tileStyles.whiteTile
+  }
 }
