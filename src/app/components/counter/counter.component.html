@@ -1,3 +1,10 @@
-<h1>{{clickCount}}</h1>
-<button (click)="incrementClicked()">Increment</button>
-<button (click)="resetClicked()">Reset</button>
+<div class="d-flex flex-column align-items-center">
+  <h1>{{clickCount}}</h1>
+  <p>{{counterMessage}}</p>
+  <div class="d-flex">
+    <button (click)="incrementClicked()">Increment</button>
+    <button (click)="resetClicked()">Reset</button>
+    <button (click)="getRandomNumber()">Get from API </button>
+  </div>
+</div>
+

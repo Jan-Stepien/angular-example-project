@@ -8,8 +8,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class CounterComponent implements OnInit {
 
   @Input() clickCount: number;
+  @Input() counterMessage: string;
   @Output() increment = new EventEmitter<void>();
+  @Output() requestCounterMessage = new EventEmitter<number>();
   @Output() reset = new EventEmitter<void>();
+  @Output() randomNumber = new EventEmitter<void>();
 
   constructor() { }
 
@@ -22,5 +25,7 @@ export class CounterComponent implements OnInit {
   resetClicked(){
     this.reset.emit();
   }
-
+  getRandomNumber(){
+    this.randomNumber.emit()
+  }
 }

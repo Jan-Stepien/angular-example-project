@@ -13,6 +13,10 @@ import { PageNotFoundComponent } from './containers/page-not-found/page-not-foun
 import { FooterComponent } from './components/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AngularMainPageComponent } from './containers/angular-main-page/angular-main-page.component';
+import { HttpClientModule } from '@angular/common/http';
+import { EffectsModule } from '@ngrx/effects';
+import { ClickCounterEffects } from './effects/click-counter.effects';
+import { TopBarComponent } from './components/top-bar/top-bar.component';
 
 @NgModule({
   declarations: [
@@ -23,14 +27,17 @@ import { AngularMainPageComponent } from './containers/angular-main-page/angular
     NgRxExampleComponent,
     PageNotFoundComponent,
     FooterComponent,
-    AngularMainPageComponent
+    AngularMainPageComponent,
+    TopBarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({click: reducers.click}),
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    EffectsModule.forRoot([ClickCounterEffects]),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

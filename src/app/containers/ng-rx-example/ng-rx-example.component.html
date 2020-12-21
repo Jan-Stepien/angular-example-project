@@ -1,1 +1,19 @@
-<app-counter [clickCount]="clickCounter$ | async" (increment)="incrementClickCounter()" (reset)="resetClickCounter()"></app-counter>
+<app-top-bar headerText="NgRx implementation example"></app-top-bar>
+<div class="d-flex flex-column align-items-center mb-2">
+  <app-counter
+  [clickCount]="clickCounter$ | async"
+  [counterMessage]="counterMessage$ | async"
+  (increment)="incrementClickCounter()"
+  (requestCounterMessage)="getMessageOfNumber($event)"
+  (reset)="resetClickCounter()"
+  (randomNumber)="getRandomClickCounter()"></app-counter>
+  <h1>What is implemented:</h1>
+  <p>State, Actions, Effects, Reducer</p>
+  <p>Getting data of 2 sources ( user input and API )</p>
+
+  <div class="d-flex align-items-center">
+    <p class="mb-0">See code at: </p>
+    <a style ="color:black" target="_blank" href="https://github.com/Jan-Stepien/hello-world/tree/master/src/app/containers/ng-rx-example"><fa-icon [icon]="faGithub" size="2x" ></fa-icon></a>
+  </div>
+</div>
+

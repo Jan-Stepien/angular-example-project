@@ -15,7 +15,7 @@ export class AngularMainPageComponent implements OnInit {
   tileStyles = tileStyles;
   tiles = [
     {
-      label:'NgRx implementation',
+      label:'NgRx',
       redirectTo: 'ngRx'
     },
     // TODO:
